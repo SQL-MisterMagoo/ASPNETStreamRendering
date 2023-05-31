@@ -1,0 +1,13 @@
+﻿@page "/"
+@layout MainLayout
+@attribute [StreamRendering(true)]
+<h3>RazorTest @DateTime.Now.ToLongTimeString() @delayed</h3>
+@code
+{
+	string delayed;
+	protected override Task OnInitializedAsync()
+	{
+		return Task.Delay(2000);
+		delayed = "Done";
+	}
+}
