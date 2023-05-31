@@ -5,9 +5,9 @@
 @code
 {
 	string delayed;
-	protected override Task OnInitializedAsync()
+	protected override async Task OnInitializedAsync()
 	{
-		return Task.Delay(2000);
+		await Task.Delay(2000);
 		delayed = "Done";
 	}
 }
